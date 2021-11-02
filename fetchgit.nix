@@ -4,7 +4,7 @@
 let
   hsToCoq_git = builtins.fetchGit {
     url = "https://github.com/plclub/hs-to-coq.git";
-    ref = "a67f4d1ef434a771a2e35786729e1e34a2a8175b";
+    rev = "a67f4d1ef434a771a2e35786729e1e34a2a8175b";
   };
   hsToCoq_defaultnix = import (hsToCoq_git + /default.nix) {};
   coqenvironment = pkgs.stdenv.mkDerivation {
