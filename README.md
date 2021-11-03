@@ -6,7 +6,9 @@ After you're done with [the Queue tutorial](https://www.cis.upenn.edu/~plclub/bl
 
 ## Explore the repo!
 
-I approached this based on [`nix`](https://nixos.org/download.html). `hs-to-coq` doesn't officially support `nix` yet, they recommend using `stack`. `
+This is currently a toy project called `SecureChannel`. It's a proof of concept to build up my familiarity with the tool so I can tackle `plutus` and `Danaswap`. Yes, it's based on an exercise from a cryptography textbook **but it should not be taken seriously as cryptographic code**.
+
+I approached this based on [`nix`](https://nixos.org/download.html). `hs-to-coq` doesn't officially support `nix` yet (in their CI, etc), they recommend using `stack`. `
 
 - Read `Makefile`. 
 - Read `src-haskell/edits`
@@ -14,7 +16,7 @@ I approached this based on [`nix`](https://nixos.org/download.html). `hs-to-coq`
 - `src-haskell/` is where your haskell source goes.
 - `src-coq/` is the output dir.
 - Read `_CoqProject`
-- Read `gitfetch.nix`, `default.nix`, and `shell.nix`
+- Read `hs-to-coq.nix`, `default.nix`, and `shell.nix`
 
 ## Usage
 

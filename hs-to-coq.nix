@@ -22,6 +22,6 @@ let
   };
 in
 {
-  hsToCoq_defaultnix = hsToCoq_defaultnix;
-  hsToCoq_coqenvironment = coqenvironment;
+  defaultnix = hsToCoq_defaultnix;
+  coqenvironment = coqenvironment;
 }

@@ -20,12 +20,12 @@ call-hs-to-coq = ./result/bin/hs-to-coq \
 
 call-coqc = coqc -R result/hs-to-coq/base \"\" -Q src-coq Src src-coq/$(1).v
 
-install:
+install: ./result/bin/hs-to-coq
 	nix-build
 	echo "hs-to-coq executable ./result/bin/hs-to-coq"
 	echo "hs-to-coq codebase compiled at result/hs-to-coq/"
 
-codegen: result/bin/hs-to-coq
+codegen:
 	nix-shell --run "$(call call-hs-to-coq,Types)"
 	nix-shell --run "$(call call-hs-to-coq,Communication)"
 	nix-shell --run "$(call call-hs-to-coq,Main)"

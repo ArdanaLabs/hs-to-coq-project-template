@@ -8,4 +8,5 @@ rename value Transmission.Transmission = Transmission.MkTransmission
 rename value Message.Message = Message.MkMessage
 rename value Datum.Datum = Datum.MkDatum
 
+skip module Data.ByteString
 # axiomatize module Data.ByteString

@@ -2,9 +2,10 @@
 , pkgs ? import ./pkgs.nix { inherit chan; }
 }:
 let
-  fetchgit = import ./fetchgit.nix { inherit chan pkgs; };
+  hs-to-coq = import ./hs-to-coq.nix { inherit chan pkgs; };
   srcHaskell = import ./src-haskell/default.nix { inherit chan pkgs; };
 in
 pkgs.mkShell {
-  nativeBuildInputs = fetchgit.hsToCoq_coqenvironment.nativeBuildInputs;
+  nativeBuildInputs = hs-to-coq.coqenvironment.nativeBuildInputs;
+  inputsFor = [ srcHaskell ];
 }

@@ -2,11 +2,11 @@
 , pkgs ? import ./pkgs.nix { inherit chan; }
 }:
 let
-  fetchgit = import ./fetchgit.nix { inherit chan pkgs; };
+  hs-to-coq = import ./hs-to-coq.nix { inherit chan pkgs; };
 in pkgs.runCommand "hs-to-coq-result" {}
     ''
       mkdir -p $out
       cd $out
-      cp -r ${fetchgit.hsToCoq_coqenvironment}/. hs-to-coq
-      cp -r ${fetchgit.hsToCoq_defaultnix.haskellPackages.hs-to-coq}/. .
+      cp -r ${hs-to-coq.coqenvironment}/. hs-to-coq
+      cp -r ${hs-to-coq.defaultnix.haskellPackages.hs-to-coq}/. .
     ''
